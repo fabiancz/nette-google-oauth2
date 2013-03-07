@@ -1,17 +1,3 @@
-<?php
-
-namespace App;
-
-use Nette,
-	Model;
-
-
-/**
- * Homepage presenter.
- */
-class HomepagePresenter extends BasePresenter
-{
-
     public function renderDefault()
     {
         $this->template->user = $this->user;
@@ -50,5 +36,3 @@ class HomepagePresenter extends BasePresenter
         $this->user->logout();
         $this->redirect('default');
     }
-
-}

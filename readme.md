@@ -2,7 +2,7 @@ This is fork, so I can't add it to Packagist.
 
 ## Instalation
 
-Insert repositories section:
+Insert repositories section to composer.json in your project:
 
 ```neon
 "repositories": [
