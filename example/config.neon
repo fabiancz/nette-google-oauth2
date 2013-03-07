@@ -1,0 +1,46 @@
+#
+# SECURITY WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+#
+# If you don't protect this directory from direct web access, anybody will be able to see your passwords.
+# http://nette.org/security-warning
+#
+parameters:
+    database:
+        driver: mysql
+        host: localhost
+        dbname: 
+        user: 
+        password: 
+    googleAuth:
+        id: 
+        secret: 
+        scope: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
+
+php:
+    date.timezone: Europe/Prague
+    # zlib.output_compression: yes
+
+nette:
+    application:
+        errorPresenter: Error
+        mapping:
+            *: App\*Module\*Presenter
+
+    session:
+        expiration: 14 days
+
+services:
+    routerFactory: App\RouterFactory
+    router: @routerFactory::createRouter
+    database:
+        class: Nette\Database\Connection(
+            '%database.driver%:host=%database.host%;dbname=%database.dbname%',
+            %database.user%, %database.password%
+        )
+    googleAuth: Fmlabs\GoogleAuth\GoogleAuth([id: %googleAuth.id%, secret: %googleAuth.secret%])
+    authenticator:
+        class: Fmlabs\GoogleAuth\GoogleAuthenticator
+        arguments: [@googleAuth, @database]
+
+
+factories:

@@ -1,13 +1,13 @@
 {
-	"name": "mikulas/nette-google-oauth2",
+	"name": "fabiancz/nette-google-oauth2",
 	"description": "minimalistic Google OAuth2 api",
-	"authors": [{"name": "Mikulas Dite"}],
+	"authors": [{"name": "Mikulas Dite", "name": "Lukas Vana"}],
 	"license": ["BSD-3"],
 	"require": {
-		"php": ">=5.4",
+		"php": ">=5.3",
 		"nette/nette": ">=2.0"
 	},
 	"autoload": {
-		"files": ["Google.php"]
+		"files": ["GoogleAuth.php", "GoogleAuthenticator.php"]
 	}
 }
