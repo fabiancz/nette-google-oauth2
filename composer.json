@@ -8,6 +8,9 @@
 		"nette/nette": ">=2.0"
 	},
 	"autoload": {
-		"files": ["GoogleAuth.php", "GoogleAuthenticator.php"]
+                "psr-0": {
+                    "Fmlabs\\GoogleAuth\\": "src/",
+                    "Fmlabs\\GoogleAuthenticator\\": "src/"
+		}
 	}
 }
