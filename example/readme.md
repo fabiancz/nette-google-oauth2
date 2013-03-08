@@ -28,9 +28,9 @@ This project is fork, so you can add it to yourProject by editing composer.json:
 Create API acces on Google APIs console: https://code.google.com/apis/console. In Redirect URIs specify http://localhost/homepage/google-auth. You have to run whole application directly on localhost! Google doesn't support own domains (f.ex.: http://myProject.l). Add credentials to config.neon.
 
 Replace these files in yourProject:
-	- app/presenters/HomepagePresenter.php
-	- app/templates/Homepage/default.latte
-	- app/config/config.neon
+- app/presenters/HomepagePresenter.php
+- app/templates/Homepage/default.latte
+- app/config/config.neon
 
 Disable loading of config.neon.localhost by removing corresponding line in bootstrap.php
 
@@ -55,7 +55,7 @@ Visit your http://localhost and login by Google!:)
 ```php
 Nette\InvalidStateException
 
-Ambiguous class App\HomepagePresenter
+Ambiguous class App\HomepagePresenter ...
 ```
 
 Remove libs/ dir from definition of RobotLoader paths. This line: ```php->addDirectory(__DIR__ . '/../libs')```
